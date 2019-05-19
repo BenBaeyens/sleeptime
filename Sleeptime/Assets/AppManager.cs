@@ -10,6 +10,7 @@ public class AppManager : MonoBehaviour {
 
 
     string menuIndex;
+    public GameObject sleepmenu;
     public GameObject wakeupmenu;
     
     public TMP_InputField wakeupTime;
@@ -134,6 +135,7 @@ public class AppManager : MonoBehaviour {
         }
 
     public void SleepnowOpen() {
+        sleepmenu.transform.SetAsLastSibling();
         animator.SetTrigger("Sleepnow");
         menuIndex = "SleepNow";
 
@@ -151,5 +153,9 @@ public class AppManager : MonoBehaviour {
         wakeupTime.text = firstpart + ":" + secondpart;
 
    
+    }
+
+    public void openKeyboard() {
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.NumberPad);
     }
 }
