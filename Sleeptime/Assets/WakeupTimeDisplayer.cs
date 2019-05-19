@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TimeDisplayer : MonoBehaviour {
+public class WakeupTimeDisplayer : MonoBehaviour {
     public int cycleNumbers;
 
     AppManager appManager;
     TextMeshProUGUI text;
 
-    private void Start() {
+    private void Awake() {
         appManager = GameObject.Find("Main").GetComponent<AppManager>();
         text = GetComponent<TextMeshProUGUI>();
-        appManager.CalculateTime(cycleNumbers);
+        appManager.CalculateWakeUpTime(cycleNumbers);
         text.text = appManager.time;
     }
 }

@@ -16,6 +16,9 @@ public class AppManager : MonoBehaviour {
     int minutes;
     int hours;
 
+    int wakeuphours;
+    int wakeupminutes;
+
     private void Start() {
         animator = GetComponent<Animator>();
 
@@ -70,10 +73,14 @@ public class AppManager : MonoBehaviour {
         }
 
         time = string.Format("{0:00}:{1:00}", hours, minutes);
-        Debug.Log(time);
+       
     }
 
-    public void CalculateWakeUpTime(int t) {
+    /*public void CalculateWakeUpTime(int t) {
+        hours = wakeuphours;
+        minutes = wakeupminutes;
+        Debug.Log(hours + minutes.ToString());
+
         minutes -= 14;
         for (int i = 0; i < t; i++)
         {
@@ -93,15 +100,42 @@ public class AppManager : MonoBehaviour {
 
         time = string.Format("{0:00}:{1:00}", hours, minutes);
 
-    }
+    }*/
+    // THIS IS LITERALLY THE OPPOSITE, THE "WHEN SHOULD YOU GO TO BED IF YOU WAKE UP AT ... "
 
+    public void CalculateWakeUpTime(int t) {
+            hours = wakeuphours;
+            minutes = wakeupminutes;
+            Debug.Log(hours + minutes.ToString());
+
+            minutes += 14;
+            for (int i = 0; i < t; i++)
+            {
+
+                hours += 1;
+                minutes += 40;
+
+
+                if (minutes >=60)
+                {
+                    minutes -= 60;
+                    hours += 1;
+                }
+                if (hours >= 24)
+                    hours -= 24;
+            }
+
+            time = string.Format("{0:00}:{1:00}", hours, minutes);
+
+        }
     public void wakeUpFixText() {
 
 
         string firstpart = wakeupTime.text.Substring(0, 2);
         string secondpart = wakeupTime.text.Substring(2, 2);
-        hours = int.Parse(firstpart);
-        minutes = int.Parse(secondpart);
+        wakeuphours = int.Parse(firstpart);
+        wakeupminutes = int.Parse(secondpart);
+        Debug.Log(wakeuphours + wakeupminutes.ToString());
         wakeupTime.text = firstpart + ":" + secondpart;
 
    
