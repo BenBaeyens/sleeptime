@@ -32,9 +32,12 @@ public class AppManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (menuIndex == "SleepNow")
+            {
                 animator.SetTrigger("Sleepclose");
+            }
             if (menuIndex == "Wakeup")
                 animator.SetTrigger("Wakeupclose");
+            
         }
 
     }
