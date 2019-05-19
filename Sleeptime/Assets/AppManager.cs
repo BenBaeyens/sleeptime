@@ -8,6 +8,8 @@ using TMPro;
 public class AppManager : MonoBehaviour {
     Animator animator;
 
+
+    string menuIndex;
     public GameObject wakeupmenu;
     
     public TMP_InputField wakeupTime;
@@ -27,15 +29,13 @@ public class AppManager : MonoBehaviour {
     }
 
     private void Update() {
-
-
-
-
-
-
-
-
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (menuIndex == "SleepNow")
+                animator.SetTrigger("Sleepclose");
+            if (menuIndex == "Wakeup")
+                animator.SetTrigger("Wakeupclose");
+        }
 
     }
 
@@ -47,6 +47,7 @@ public class AppManager : MonoBehaviour {
     public void WakeupMenuOpen() {
         animator.SetTrigger("Wakeup2");
         wakeupmenu.transform.SetAsLastSibling();
+        menuIndex = "Wakeup";
 
     }
 
@@ -128,6 +129,14 @@ public class AppManager : MonoBehaviour {
             time = string.Format("{0:00}:{1:00}", hours, minutes);
 
         }
+
+    public void SleepnowOpen() {
+        animator.SetTrigger("Sleepnow");
+        menuIndex = "SleepNow";
+
+    }
+
+
     public void wakeUpFixText() {
 
 
