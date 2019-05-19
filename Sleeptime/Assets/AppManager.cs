@@ -9,7 +9,7 @@ public class AppManager : MonoBehaviour {
 
   
    
-    string time;
+    public string time;
     int minutes;
     int hours;
 
@@ -36,20 +36,20 @@ public class AppManager : MonoBehaviour {
        
     }
 
-    public void SleepNow() {
-        animator.SetTrigger("Sleepnow");
-    }
+ 
+    
 
     public void CalculateTime(int t) {
         string[] temp = DateTime.Now.TimeOfDay.ToString().Split(':');
         hours = int.Parse(temp[0]);
         minutes = int.Parse(temp[1]);
 
+        minutes += 14;
         for (int i = 0; i < t; i++)
         {
 
         hours += 1;
-        minutes += 30;
+        minutes += 40;
           
 
         if(minutes >= 60)

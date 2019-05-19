@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TimeDisplayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int cycleNumbers;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    AppManager appManager;
+    TextMeshProUGUI text;
+
+    private void Start() {
+        appManager = GameObject.Find("Main").GetComponent<AppManager>();
+        text = GetComponent<TextMeshProUGUI>();
+        appManager.CalculateTime(cycleNumbers);
+        text.text = appManager.time;
     }
 }
