@@ -8,7 +8,8 @@ using TMPro;
 public class AppManager : MonoBehaviour {
     Animator animator;
 
-
+    public GameObject wakeupmenu;
+    
     public TMP_InputField wakeupTime;
     public string[] temparray;
     public string time;
@@ -20,9 +21,6 @@ public class AppManager : MonoBehaviour {
 
 
 
-        CalculateTime(1);
-        CalculateTime(2);
-        CalculateTime(3);
     }
 
     private void Update() {
@@ -41,6 +39,12 @@ public class AppManager : MonoBehaviour {
 
     public void QuitApp() {
         Application.Quit();
+    }
+
+    public void WakeupMenuOpen() {
+        animator.SetTrigger("Wakeup2");
+        wakeupmenu.transform.SetAsLastSibling();
+
     }
 
     public void CalculateTime(int t) {
