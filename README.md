@@ -3,7 +3,7 @@
 
 
 ###### Developed by Kjip, 2019
-###### Published on Google Play store - April 24, 2019
+###### Published on Google Play store - May 20, 2019
 
 ## Short Description
 The Sleeptime app is an app that allows you to see which times you have to wake up or go to bed for an ideal night's rest!
