@@ -36,3 +36,4 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Sleeptime/Assets/TextMesh Pro/*
+Sleeptime/user.keystore
