@@ -12,9 +12,10 @@ public class AppManager : MonoBehaviour {
     string menuIndex;
     public GameObject sleepmenu;
     public GameObject wakeupmenu;
+    public GameObject wakeupmenu1submenu;
     
     public TMP_InputField wakeupTime;
-    public string[] temparray;
+   
     public string time;
     int minutes;
     int hours;
@@ -50,6 +51,7 @@ public class AppManager : MonoBehaviour {
 
     public void WakeupMenuOpen() {
         animator.SetTrigger("Wakeup2");
+        wakeupmenu1submenu.SetActive(false);
         wakeupmenu.transform.SetAsLastSibling();
         menuIndex = "Wakeup";
 
@@ -156,6 +158,6 @@ public class AppManager : MonoBehaviour {
     }
 
     public void openKeyboard() {
-        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.NumberPad);
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.NumberPad, false, false, true, false);
     }
 }
