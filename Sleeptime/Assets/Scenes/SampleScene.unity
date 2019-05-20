@@ -1957,8 +1957,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sleepmenu: {fileID: 1994630878}
   wakeupmenu: {fileID: 358712666}
+  wakeupmenu1submenu: {fileID: 1486863399}
   wakeupTime: {fileID: 1294824250}
-  temparray: []
   time: 
 --- !u!1 &507631531
 GameObject:
