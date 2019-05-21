@@ -67,9 +67,12 @@ public class AppManager : MonoBehaviour {
         {
 
             hours += 1;
-            minutes += 40;
+            minutes += 50;
 
-
+            if(minutes >= 70)
+            { minutes -= 70;
+                hours++;
+            }
             if (minutes >= 60)
             {
                 minutes -= 60;
@@ -120,10 +123,14 @@ public class AppManager : MonoBehaviour {
             {
 
                 hours += 1;
-                minutes += 40;
+                minutes += 45;
 
-
-                if (minutes >=60)
+            if (minutes >= 70)
+            {
+                minutes -= 70;
+                hours++;
+            }
+            if (minutes >=60)
                 {
                     minutes -= 60;
                     hours += 1;
