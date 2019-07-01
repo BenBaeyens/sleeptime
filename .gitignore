@@ -37,3 +37,4 @@ sysinfo.txt
 *.unitypackage
 Sleeptime/Assets/TextMesh Pro/*
 Sleeptime/user.keystore
+Sleeptime/ProjectSettings/*
