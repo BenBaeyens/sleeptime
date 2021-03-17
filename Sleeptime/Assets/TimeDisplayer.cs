@@ -10,9 +10,19 @@ public class TimeDisplayer : MonoBehaviour
     AppManager appManager;
     TextMeshProUGUI text;
 
-    private void Start() {
+
+    private void Start()
+    {
+
+        // Not the most performant, but easy fix
+
         appManager = GameObject.Find("Main").GetComponent<AppManager>();
         text = GetComponent<TextMeshProUGUI>();
+        InvokeRepeating("CalculateTime", 0, 60);
+    }
+
+    private void CalculateTime()
+    {
         appManager.CalculateTime(cycleNumbers);
         text.text = appManager.time;
     }
